@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite id="0" hostname="http://localhost" package="" name="APT_TC#1 GET healthcheck Fail" tests="1" failures="0" errors="0" timestamp="2021-02-01T12:16:12.981" time="0.067">
+    <testcase classname=" / APT_TC#1 GET healthcheck Fail" name="health check should fail" time="0.067"/>
+  </testsuite>
+  <testsuite id="1" hostname="http://localhost" package="" name="APT_TC#2 Healthcheck Pass" tests="1" failures="0" errors="0" timestamp="2021-02-01T12:16:13.048" time="0.005">
+    <testcase classname=" / APT_TC#2 Healthcheck Pass" name="health check should PASS" time="0.005"/>
+  </testsuite>
+  <testsuite id="10" hostname="http://localhost" package="" name="APT_TC#1 GET healthcheck Fail" tests="1" failures="0" errors="0" timestamp="2021-02-01T12:16:13.053" time="0.004">
+    <testcase classname=" / APT_TC#1 GET healthcheck Fail" name="health check should fail" time="0.004"/>
+  </testsuite>
+  <testsuite id="11" hostname="http://localhost" package="" name="APT_TC#2 Healthcheck Pass" tests="1" failures="0" errors="0" timestamp="2021-02-01T12:16:13.057" time="0.003">
+    <testcase classname=" / APT_TC#2 Healthcheck Pass" name="health check should PASS" time="0.003"/>
+  </testsuite>
+</testsuites>
