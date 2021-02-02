@@ -6,13 +6,13 @@
 	},
 	"item": [
 		{
-			"name": "APT_TC#1 GET healthcheck Fail",
+			"name": "GET healthcheck Fail",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
 						"exec": [
-							"pm.test('health check should fail', function (){",
+							"pm.test('APT_TC#1 health check should fail', function (){",
 							"    pm.response.to.have.status(401);",
 							"})"
 						],
@@ -38,13 +38,13 @@
 			"response": []
 		},
 		{
-			"name": "APT_TC#2 Healthcheck Pass",
+			"name": "Healthcheck Pass",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
 						"exec": [
-							"pm.test('health check should PASS', function (){",
+							"pm.test('APT_TC#2 health check should PASS', function (){",
 							"    pm.response.to.have.status(200);",
 							"})"
 						],
@@ -55,8 +55,8 @@
 					"listen": "prerequest",
 					"script": {
 						"exec": [
-							"postman.setNextRequest(\"Register User 1\")",
-							"console.log(\"Token created successfully\")"
+							"// postman.setNextRequest(\"Register User 1\")",
+							"// console.log(\"Token created successfully\")"
 						],
 						"type": "text/javascript"
 					}
@@ -67,8 +67,8 @@
 				"header": [
 					{
 						"key": "x-api-key",
-						"value": "MyUniqueApiKey",
-						"type": "text"
+						"type": "text",
+						"value": "MyUniqueApiKey"
 					}
 				],
 				"url": {
@@ -86,7 +86,7 @@
 			"response": []
 		},
 		{
-			"name": "APT_TC#3 Register User 1",
+			"name": "Register User 1",
 			"event": [
 				{
 					"listen": "prerequest",
@@ -103,7 +103,7 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"pm.test('Created user', function(){",
+							"pm.test('APT_TC#3 Created user', function(){",
 							"    pm.response.to.have.status(201);",
 							"    const {data} = pm.response.json();",
 							"    pm.environment.set('user1', data._id);",
@@ -149,17 +149,17 @@
 			"response": []
 		},
 		{
-			"name": "APT_TC#4 Login User 1",
+			"name": "Login User 1",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
 						"exec": [
-							"pm.test('logged in', function(){",
+							"pm.test('lAPT_TC#4 ogged in', function(){",
 							"    pm.response.to.have.status(200);",
 							"});",
 							"",
-							"pm.test('has a token', function(){",
+							"pm.test('APT_TC#5 has a token', function(){",
 							"   const {data} = pm.response.json();",
 							"   pm.environment.set('token', data.token);",
 							"   return 'token' in data;",
@@ -199,13 +199,13 @@
 			"response": []
 		},
 		{
-			"name": "APT_TC#5 Create Movie User 1",
+			"name": "Create Movie User 1",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
 						"exec": [
-							"pm.test('Created Movie for user 1', function(){",
+							"pm.test('APT_TC#6 Created Movie for user 1', function(){",
 							"    pm.response.to.have.status(201);",
 							"    ",
 							"    const {data} = pm.response.json();",
@@ -250,13 +250,13 @@
 			"response": []
 		},
 		{
-			"name": "APT_TC#6 Create Movie 2 User 1",
+			"name": "Create Movie 2 User 1",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
 						"exec": [
-							"pm.test('Created 2nd Movie for user 1', function(){",
+							"pm.test('APT_TC#7 Created 2nd Movie for user 1', function(){",
 							"    pm.response.to.have.status(201);",
 							"    ",
 							"    const {data} = pm.response.json();",
@@ -301,17 +301,17 @@
 			"response": []
 		},
 		{
-			"name": "APT_TC#7 Get All Movies User 1",
+			"name": "Get All Movies User 1",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
 						"exec": [
-							"pm.test('got all movies', function(){",
+							"pm.test('APT_TC#8 got all movies', function(){",
 							"    pm.response.to.have.status(200);",
 							"})",
 							"",
-							"pm.test('list has two movies', function(){",
+							"pm.test('APT_TC#9 list has two movies', function(){",
 							"    const {data} = pm.response.json();",
 							"    //list has two movies",
 							"    return data.length == 2;",
@@ -346,13 +346,13 @@
 			"response": []
 		},
 		{
-			"name": "APT_TC#8 Get Specific Movie User 1",
+			"name": "Get Specific Movie User 1",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
 						"exec": [
-							"pm.test('got a specific movie', function(){",
+							"pm.test('APT_TC#10 got a specific movie', function(){",
 							"    pm.response.to.have.status(200);",
 							"})"
 						],
@@ -386,13 +386,13 @@
 			"response": []
 		},
 		{
-			"name": "APT_TC#9 Delete Specific Movie User 1",
+			"name": "Delete Specific Movie User 1",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
 						"exec": [
-							"pm.test('got a specific movie', function(){",
+							"pm.test('APT_TC#11 got a specific movie', function(){",
 							"    pm.response.to.have.status(200);",
 							"})"
 						],
@@ -426,17 +426,17 @@
 			"response": []
 		},
 		{
-			"name": "APT_TC#10 Get All Movies User 1 AGAIN",
+			"name": "Get All Movies User 1 AGAIN",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
 						"exec": [
-							"pm.test('got all movies AGAIN', function(){",
+							"pm.test('APT_TC#12 got all movies AGAIN', function(){",
 							"    pm.response.to.have.status(200);",
 							"});",
 							"",
-							"pm.test('list has two movies', function(){",
+							"pm.test('APT_TC#13 list has two movies', function(){",
 							"    const {data} = pm.response.json();",
 							"    //only one movie left",
 							"    return data.length == 1;",
